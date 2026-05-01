@@ -21,7 +21,11 @@
         padding: 24px;
         font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
         color: #4a4a4a;
-        background: linear-gradient(135deg, #fffaf5 0%, #fef6ff 45%, #f2fbff 100%);
+        background:
+          radial-gradient(circle at 12% 18%, rgba(255, 205, 229, 0.3) 0 90px, transparent 100px),
+          radial-gradient(circle at 84% 16%, rgba(191, 231, 255, 0.25) 0 86px, transparent 96px),
+          radial-gradient(circle at 75% 82%, rgba(221, 255, 218, 0.25) 0 92px, transparent 102px),
+          linear-gradient(135deg, #fffaf5 0%, #fef6ff 45%, #f2fbff 100%);
       }
 
       .card {
@@ -31,10 +35,12 @@
         border-radius: 20px;
         box-shadow: 0 10px 30px rgba(151, 131, 172, 0.12);
         padding: clamp(20px, 5vw, 36px);
+        display: grid;
+        gap: 18px;
       }
 
       h1 {
-        margin: 0 0 12px;
+        margin: 0;
         font-size: clamp(1.8rem, 6vw, 2.4rem);
         color: #5b4b8a;
       }
@@ -44,15 +50,52 @@
         line-height: 1.8;
         font-size: clamp(1rem, 3.8vw, 1.1rem);
       }
+
+      .hero-image {
+        width: min(100%, 420px);
+        margin-inline: auto;
+        display: block;
+        border-radius: 16px;
+        box-shadow: 0 8px 22px rgba(128, 112, 160, 0.18);
+      }
+
+      .next-button {
+        justify-self: center;
+        border: none;
+        border-radius: 999px;
+        padding: 12px 24px;
+        font-size: 1rem;
+        font-weight: 700;
+        color: #fff;
+        background: linear-gradient(135deg, #8f7cf0, #6ab8ff);
+        cursor: pointer;
+        box-shadow: 0 8px 18px rgba(102, 125, 255, 0.3);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .next-button:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 10px 22px rgba(102, 125, 255, 0.34);
+      }
+
+      .next-button:active {
+        transform: translateY(0);
+      }
     </style>
   </head>
   <body>
     <main class="card">
       <h1>ようこそ！</h1>
+      <img
+        class="hero-image"
+        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23ffe1f1'/%3E%3Cstop offset='1' stop-color='%23d7efff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='500' rx='40' fill='url(%23bg)'/%3E%3Ccircle cx='180' cy='150' r='70' fill='%23ffffff' fill-opacity='0.75'/%3E%3Ccircle cx='560' cy='300' r='90' fill='%23ffffff' fill-opacity='0.55'/%3E%3Cpath d='M90 360C190 280 290 280 390 360C490 440 590 440 690 360' fill='none' stroke='%238b79d8' stroke-opacity='0.55' stroke-width='14' stroke-linecap='round'/%3E%3Ctext x='400' y='258' text-anchor='middle' font-size='56' font-family='sans-serif' fill='%235f4ea5'%3Eゆったり%3C/text%3E%3C/svg%3E"
+        alt="やさしい色合いのイラスト"
+      />
       <p>
         ここは、ゆったりとした気持ちで見られるシンプルなページです。<br />
         これから少しずつ、楽しいコンテンツを増やしていきます。
       </p>
+      <button class="next-button" type="button">つぎへ</button>
     </main>
   </body>
 </html>
